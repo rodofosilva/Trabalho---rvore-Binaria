@@ -1,53 +1,49 @@
 # Trabalho Prático – Árvores Binárias e Recursividade
 
 **Disciplina:** Estrutura de Dados  
-**Professor:** Prof. Anderson Soares 
+**Professor:** Anderson Soares
 
-------
+---
 
 ## Parte 1 – Conceito e Explicação
 
 ### 1. O que é recursividade?
-É quando uma função chama a si mesma para resolver partes menores de um problema, até chegar a um **caso base**, que encerra as chamadas.  
-Exemplo: calcular fatorial ou percorrer nós de uma árvore.
+É quando uma função chama a si mesma para resolver um problema menor, até chegar a um **caso base** que encerra as chamadas.
 
-### 2. Como a recursividade é usada na travessia de uma árvore binária?
-Ela é usada para visitar cada nó da árvore chamando a mesma função para as **subárvores esquerda e direita**, até chegar a nós nulos.  
-Exemplo: em ordem → esquerda → raiz → direita.
+### 2. Como a recursividade é usada na árvore binária?
+Ela é usada para percorrer os nós chamando a mesma função para as subárvores **esquerda** e **direita**, até chegar em nós nulos.
 
-### 3. Qual a diferença entre recursão e laço (for/while)?
-A recursão repete **chamando a própria função**; o laço repete **no mesmo bloco de código**.  
-Recursão usa chamadas de função (pilha), e laços usam contadores e iterações.
+### 3. Diferença entre recursão e laço (for/while)
+A recursão repete através de chamadas de função; o laço repete o código dentro do mesmo bloco.  
+Recursão usa pilha de chamadas, enquanto laços usam contadores.
 
 ---
 
 ## Parte 2 – Implementação
 
-- A árvore foi implementada com os métodos:
-  - `inserir(int valor)`
-  - `buscar(int valor)`
-  - `preOrdem()`
-  - `emOrdem()`
-  - `posOrdem()`
+### Métodos implementados
+- `inserir(int valor)`  
+- `buscar(int valor)`  
+- `emOrdem()`  
+- `preOrdem()`  
+- `posOrdem()`
 
-- Todos os métodos usam **recursão** e possuem **caso base** documentado no código.  
-- As duplicatas não são inseridas.
+Todos usam **recursão** e têm **caso base** bem definido.  
+Valores duplicados não são inseridos.
 
 ---
 
 ## Como compilar e executar
 
-No terminal:
+No terminal, dentro da pasta do projeto:
 ```bash
+
+Inserindo valores: 18 3 10 1 6 14 4 7 131
+Em ordem: 1 3 4 6 7 10 14 18 131
+Pre-ordem: 18 3 1 10 6 4 7 14 131
+Pos-ordem: 1 4 7 6 14 10 3 131 18
+Buscar 10: true
+Buscar 5: false
+
 javac *.java
 java Main
-Inserindo valores: 50, 30, 70, 20, 40, 60, 80
-
-Buscas:
-buscar(60) -> true
-buscar(99) -> false
-
-Percursos:
-Pré-ordem: [50, 30, 20, 40, 70, 60, 80]
-Em-ordem:  [20, 30, 40, 50, 60, 70, 80]
-Pós-ordem: [20, 40, 30, 60, 80, 70, 50]
